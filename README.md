@@ -1,6 +1,13 @@
 # (WIP) OpenAI-Character-Chat
 Talk with a video game character using OpenAI API
 
+### TODO : 
+
+Milan:
+
+- [ ] Replace go api with a python api
+- [ ] Fix docker compose
+
 ## Techs
 This app is using GO for the server-side
 
