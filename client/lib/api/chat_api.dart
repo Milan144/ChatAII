@@ -1,5 +1,5 @@
-import 'package:client/models/chat_message.dart';
-import 'package:client/secrets.dart';
+import 'package:chatgpt_client/models/chat_message.dart';
+import 'package:chatgpt_client/secrets.dart';
 import 'package:dart_openai/openai.dart';
 
 class ChatApi {
