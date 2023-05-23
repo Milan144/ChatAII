@@ -9,14 +9,20 @@ Milan:
 - [ ] Fix docker compose
 
 ## Techs
-This app is using GO for the server-side
+This app is using Python for the server-side and Flutter for the client-side app.
 
 ## Requirements
-You must install Go. Make sure go is installed by typing 'go version'. (On MacOS go is already added in path but on other OS you may need to add it yourself).
+Make sure you have installed python and Flutter. Check if Flutter can run by typing "flutter doctor" (You need to add flutter to the path).
+
+### Optional requirement 
+Its better if you have docker installed to easily access to a database.
+
 ## Installation 
-Launch the installation script, it will install the dependencies for the GO server.
+Launch the installation script, it will install the dependencies for the python api and the flutter app.
 
 ## Database
+"docker compose up -d"
+
 Import the characterChatAI.sql file into msql.
 
 ## Start the app 
