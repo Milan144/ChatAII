@@ -1,6 +1,6 @@
 # Secrets
 client/lib/secrets.dart
-
+client/.dart_tool/*
 # Miscellaneous
 */*.class
 */*.lock
