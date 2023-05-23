@@ -1,5 +1,6 @@
 import 'package:chatgpt_client/api/chat_api.dart';
 import 'package:chatgpt_client/chat_page.dart';
+import 'package:chatgpt_client/screens/login.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -21,7 +22,7 @@ class ChatApp extends StatelessWidget {
           secondary: Colors.lime,
         ),
       ),
-      home: ChatPage(chatApi: chatApi),
+      home: LoginPage(),
     );
   }
 }
