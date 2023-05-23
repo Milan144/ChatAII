@@ -164,8 +164,13 @@ file:///Users/alrik-alphonse/.pub-cache/hosted/pub.dev/visibility_detector-0.3.3
 file:///Users/alrik-alphonse/.pub-cache/hosted/pub.dev/visibility_detector-0.3.3/lib/
 chatgpt_client
 2.19
+<<<<<<< HEAD
 file:///Users/alrik-alphonse/Documents/MDS_flutter/ChatAII/client/
 file:///Users/alrik-alphonse/Documents/MDS_flutter/ChatAII/client/lib/
+=======
+file:///home/nok/Workspace/MDS/ChatAII/client/
+file:///home/nok/Workspace/MDS/ChatAII/client/lib/
+>>>>>>> 209b889f195cbbd86ba2becfba160ffabb75946e
 sky_engine
 3.0
 file:///Users/alrik-alphonse/Documents/MDS_flutter/flutter/bin/cache/pkg/sky_engine/

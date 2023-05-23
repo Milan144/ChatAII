@@ -8,7 +8,7 @@ else
     echo "❌ Installation failed"
 fi
 
-# Install node dependencies
+# Install flutter dependencies
 cd ../client
 flutter pub get
 # Print if the installation was successful
