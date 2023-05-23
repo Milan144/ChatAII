@@ -1,4 +1,4 @@
-# chatgpt_client
+# chataii
 
 A new Flutter project.
 
