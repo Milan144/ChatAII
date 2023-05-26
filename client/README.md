@@ -1,4 +1,4 @@
-# chataii
+# chatai
 
 A new Flutter project.
 

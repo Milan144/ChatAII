@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "chataii" "\0"
+            VALUE "FileDescription", "chatai" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "chataii" "\0"
+            VALUE "InternalName", "chatai" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2023 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "chataii.exe" "\0"
-            VALUE "ProductName", "chataii" "\0"
+            VALUE "OriginalFilename", "chatai.exe" "\0"
+            VALUE "ProductName", "chatai" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

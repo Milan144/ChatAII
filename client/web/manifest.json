@@ -1,6 +1,6 @@
 {
-    "name": "chataii",
-    "short_name": "chataii",
+    "name": "chatai",
+    "short_name": "chatai",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
