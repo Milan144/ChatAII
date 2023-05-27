@@ -19,6 +19,7 @@ server/.env
 */.project
 */.settings/
 */.vscode/*
+server/.vscode/
 
 # Flutter repo-specific
 */dev/bots/android_tools/

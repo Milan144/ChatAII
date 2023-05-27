@@ -5,7 +5,12 @@ Talk with a video game character using OpenAI API
 This app is using Python for the server-side and Flutter for the client-side app.
 
 ## Requirements
-Make sure you have installed python and Flutter. Check if Flutter can run by typing "flutter doctor" (You need to add flutter to the path).
+
+- Python
+
+- Flutter -> Check if Flutter can run by typing "flutter doctor" (You need to add flutter to the path).
+
+- Docker
 
 ### Optional requirement 
 Its better if you have docker installed to easily access to a database.
@@ -15,6 +20,8 @@ Launch the installation script, it will install the dependencies for the python 
 
 ## Database
 "docker compose up -d"
+
+The phpmyadmin is available at localhost:8081 with root:root as login and password.
 
 Import the characterChatAI.sql file into msql.
 
