@@ -1,4 +1,3 @@
-import 'package:chatai/helper/helper_function.dart';
 import 'package:chatai/services/auth_service.dart';
 import 'package:chatai/services/user_service.dart';
 import 'package:chatai/widgets/sideBar.dart';

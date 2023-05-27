@@ -1,7 +1,5 @@
-import 'package:chatai/helper/helper_function.dart';
 import 'package:chatai/pages/home_page.dart';
 import 'package:flutter/material.dart';
-import 'package:chatai/pages/account_page.dart';
 import 'package:chatai/pages/conversations_page.dart';
 import 'package:chatai/pages/login_page.dart';
 import 'package:chatai/pages/universes_page.dart';

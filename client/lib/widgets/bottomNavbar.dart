@@ -1,4 +1,3 @@
-import 'package:chatai/pages/account_page.dart';
 import 'package:chatai/pages/home_page.dart';
 import 'package:chatai/pages/universes_page.dart';
 import 'package:chatai/widgets/widgets.dart';

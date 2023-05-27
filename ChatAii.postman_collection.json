@@ -1,0 +1,2124 @@
+{
+	"info": {
+		"_postman_id": "59bb502a-152b-4371-9b92-a7530f580128",
+		"name": "ChatAii",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18517836"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"mgeiss\",\r\n    \"password\" : \"Admin123@\",\r\n    \"email\" : \"mgeiss@wevox.eu\",\r\n    \"firstname\" : \"Matthieu\",\r\n    \"lastname\" : \"GEISS\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/users",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create User",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"mgeiss\",\r\n    \"password\" : \"Admin123@\",\r\n    \"email\" : \"mgeiss@wevox.eu\",\r\n    \"firstname\" : \"Matthieu\",\r\n    \"lastname\" : \"GEISS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/users",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 15 Apr 2023 22:13:34 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.46 (Win64) PHP/7.4.9"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.9"
+								},
+								{
+									"key": "Content-Length",
+									"value": "166"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\"id\":7,\"username\":\"mgeiss\",\"email\":\"mgeiss@wevox.eu\",\"firstname\":\"Matthieu\",\"lastname\":\"GEISS\",\"created_at\":\"2023-04-15 22:13:34\",\"updated_at\":\"2023-04-15 22:13:34\"}"
+						}
+					]
+				},
+				{
+					"name": "Get One user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{API_KEY}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/users/7",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"users",
+								"7"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get One user",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/users/7",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"users",
+										"7"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 15 Apr 2023 22:16:18 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.46 (Win64) PHP/7.4.9"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.9"
+								},
+								{
+									"key": "Content-Length",
+									"value": "166"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=98"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\"id\":7,\"username\":\"mgeiss\",\"email\":\"mgeiss@wevox.eu\",\"firstname\":\"Matthieu\",\"lastname\":\"GEISS\",\"created_at\":\"2023-04-15 22:16:18\",\"updated_at\":\"2023-04-15 22:16:18\"}"
+						}
+					]
+				},
+				{
+					"name": "Get All users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{API_KEY}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/users",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All users",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/users",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 15 Apr 2023 22:18:06 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.46 (Win64) PHP/7.4.9"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.9"
+								},
+								{
+									"key": "Content-Length",
+									"value": "171"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "[{\"id\":null,\"username\":\"mgeiss\",\"email\":\"mgeiss@wevox.eu\",\"firstname\":\"Matthieu\",\"lastname\":\"GEISS\",\"created_at\":\"2023-04-15 22:18:06\",\"updated_at\":\"2023-04-15 22:18:06\"}]"
+						}
+					]
+				},
+				{
+					"name": "Modify the identified user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{API_KEY}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"mgeiss2\",\r\n    \"email\" : \"mgeiss2@wevox.eu\",\r\n    \"firstname\" : \"Matthieu2\",\r\n    \"lastname\" : \"GEISS2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/users/7",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"users",
+								"7"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Modify the identified user",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"mgeiss2\",\r\n    \"password\" : \"newPassword\",\r\n    \"email\" : \"mgeiss2@wevox.eu\",\r\n    \"firstname\" : \"Matthieu2\",\r\n    \"lastname\" : \"GEISS2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/users/7",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"users",
+										"7"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 15 Apr 2023 22:46:37 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.46 (Win64) PHP/7.4.9"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.9"
+								},
+								{
+									"key": "Content-Length",
+									"value": "172"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\"id\":\"7\",\"username\":\"mgeiss2\",\"email\":\"mgeiss2@wevox.eu\",\"firstname\":\"Matthieu2\",\"lastname\":\"GEISS2\",\"created_at\":\"2023-04-15 22:46:37\",\"updated_at\":\"2023-04-15 22:46:37\"}"
+						},
+						{
+							"name": "Modify the identified user without password",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"mgeiss3\",\r\n    \"email\" : \"mgeiss3@wevox.eu\",\r\n    \"firstname\" : \"Matthieu3\",\r\n    \"lastname\" : \"GEISS3\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/users/7",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"users",
+										"7"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 15 Apr 2023 22:47:58 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.46 (Win64) PHP/7.4.9"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.9"
+								},
+								{
+									"key": "Content-Length",
+									"value": "175"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "kkk{\"id\":\"7\",\"username\":\"mgeiss3\",\"email\":\"mgeiss2@wevox.eu\",\"firstname\":\"Matthieu2\",\"lastname\":\"GEISS2\",\"created_at\":\"2023-04-15 22:47:58\",\"updated_at\":\"2023-04-15 22:47:58\"}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Universes",
+			"item": [
+				{
+					"name": "Characters",
+					"item": [
+						{
+							"name": "Create a Character",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{API_KEY}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"Gangplank\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/universes/1/characters",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"universes",
+										"1",
+										"characters"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Create a Character",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\" : \"Gangplank\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_URL}}/universes/1/characters",
+											"host": [
+												"{{API_URL}}"
+											],
+											"path": [
+												"universes",
+												"1",
+												"characters"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "html",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Sat, 15 Apr 2023 23:34:16 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "Apache/2.4.46 (Win64) PHP/7.4.9"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/7.4.9"
+										},
+										{
+											"key": "Content-Length",
+											"value": "160"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5, max=100"
+										},
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "text/html; charset=UTF-8"
+										}
+									],
+									"cookie": [],
+									"body": "{\"id\":2,\"name\":\"Gangplank\",\"description\":\"to be generated\",\"universe_id\":1,\"creator_id\":7,\"created_at\":\"2023-04-15 23:34:16\",\"updated_at\":\"2023-04-15 23:34:16\"}"
+								}
+							]
+						},
+						{
+							"name": "Generate a new description for a character",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{API_KEY}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/universes/1/characters/2",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"universes",
+										"1",
+										"characters",
+										"2"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Generate a new description for a character",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_URL}}/universes/1/characters/2",
+											"host": [
+												"{{API_URL}}"
+											],
+											"path": [
+												"universes",
+												"1",
+												"characters",
+												"2"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "html",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Fri, 21 Apr 2023 15:27:44 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "Apache/2.4.46 (Win64) PHP/7.4.9"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/7.4.9"
+										},
+										{
+											"key": "Content-Length",
+											"value": "655"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5, max=100"
+										},
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "text/html; charset=UTF-8"
+										}
+									],
+									"cookie": [],
+									"body": "{\"id\":\"2\",\"name\":\"Gangplank\",\"description\":\"Gangplank est un puissant et charismatique pirate qui combat pour le bien-\\u00eatre et la libert\\u00e9 de Bilgewater, une ville portuaire sombre et indomptable. La devise de Gangplank est \\u00abl'aventure ou la mort\\u00bb et il s'en tient fermement \\u00e0 ces mots. Ses r\\u00e9unions clandestines avec des r\\u00e9seaux d'agents secrets, son \\u00e9thique personnelle plus dure que le fer et son app\\u00e9tit insatiable pour l'aventure lui ont permis de conqu\\u00e9rir le c\\u0153ur des habitants de Bilgewater.\",\"universe_id\":1,\"creator_id\":7,\"created_at\":\"2023-04-21 15:27:44\",\"updated_at\":\"2023-04-21 15:27:44\"}"
+								}
+							]
+						},
+						{
+							"name": "Get a character",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{API_KEY}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"Gangplank\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/universes/1/characters/2",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"universes",
+										"1",
+										"characters",
+										"2"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get a character",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{API_URL}}/universes/1/characters/2",
+											"host": [
+												"{{API_URL}}"
+											],
+											"path": [
+												"universes",
+												"1",
+												"characters",
+												"2"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "html",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Sat, 15 Apr 2023 23:49:00 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "Apache/2.4.46 (Win64) PHP/7.4.9"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/7.4.9"
+										},
+										{
+											"key": "Content-Length",
+											"value": "160"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5, max=99"
+										},
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "text/html; charset=UTF-8"
+										}
+									],
+									"cookie": [],
+									"body": "{\"id\":2,\"name\":\"Gangplank\",\"description\":\"to be generated\",\"universe_id\":1,\"creator_id\":7,\"created_at\":\"2023-04-15 23:49:00\",\"updated_at\":\"2023-04-15 23:49:00\"}"
+								}
+							]
+						},
+						{
+							"name": "Get all characters of a universe",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{API_KEY}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"Gangplank\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/universes/1/characters",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"universes",
+										"1",
+										"characters"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get all characters of a universe",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{API_URL}}/universes/1/characters",
+											"host": [
+												"{{API_URL}}"
+											],
+											"path": [
+												"universes",
+												"1",
+												"characters"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "html",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Sat, 15 Apr 2023 23:49:29 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "Apache/2.4.46 (Win64) PHP/7.4.9"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/7.4.9"
+										},
+										{
+											"key": "Content-Length",
+											"value": "162"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5, max=100"
+										},
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "text/html; charset=UTF-8"
+										}
+									],
+									"cookie": [],
+									"body": "[{\"id\":2,\"name\":\"Gangplank\",\"description\":\"to be generated\",\"universe_id\":1,\"creator_id\":7,\"created_at\":\"2023-04-15 23:49:29\",\"updated_at\":\"2023-04-15 23:49:29\"}]"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Create a universe",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{API_KEY}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"League of Legends\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/universes",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"universes"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create a universe",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"League of Legends\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/universes",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"universes"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 15 Apr 2023 23:03:46 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.46 (Win64) PHP/7.4.9"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.9"
+								},
+								{
+									"key": "Content-Length",
+									"value": "120"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=99"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\"id\":1,\"name\":\"League of Legends\",\"creator_id\":7,\"created_at\":\"2023-04-15 23:03:46\",\"updated_at\":\"2023-04-15 23:03:46\"}"
+						}
+					]
+				},
+				{
+					"name": "Rename a universe",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{API_KEY}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"League Of Legends!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/universes/1",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"universes",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Rename a universe",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"League Of Legends!\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/universes/1",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"universes",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 15 Apr 2023 23:09:08 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.46 (Win64) PHP/7.4.9"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.9"
+								},
+								{
+									"key": "Content-Length",
+									"value": "121"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\"id\":4,\"name\":\"League Of Legends!\",\"creator_id\":7,\"created_at\":\"2023-04-15 23:09:08\",\"updated_at\":\"2023-04-15 23:09:08\"}"
+						}
+					]
+				},
+				{
+					"name": "Get a universe",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{API_KEY}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"League of Legends\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/universes/1",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"universes",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get a universe",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/universes/1",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"universes",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 15 Apr 2023 23:06:02 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.46 (Win64) PHP/7.4.9"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.9"
+								},
+								{
+									"key": "Content-Length",
+									"value": "123"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\"id\":null,\"name\":\"League of Legends\",\"creator_id\":7,\"created_at\":\"2023-04-15 23:06:02\",\"updated_at\":\"2023-04-15 23:06:02\"}"
+						}
+					]
+				},
+				{
+					"name": "Get all universes",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{API_KEY}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"League of Legends\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/universes/1",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"universes",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get all universes",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/universes",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"universes"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 15 Apr 2023 23:07:11 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.46 (Win64) PHP/7.4.9"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.9"
+								},
+								{
+									"key": "Content-Length",
+									"value": "125"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "[{\"id\":null,\"name\":\"League of Legends\",\"creator_id\":7,\"created_at\":\"2023-04-15 23:07:11\",\"updated_at\":\"2023-04-15 23:07:11\"}]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Conversations",
+			"item": [
+				{
+					"name": "Messages",
+					"item": [
+						{
+							"name": "Get all messages of a conversation",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{API_KEY}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/conversations/21/messages",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"conversations",
+										"21",
+										"messages"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get all messages of a conversation",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{API_URL}}/conversations/21/messages",
+											"host": [
+												"{{API_URL}}"
+											],
+											"path": [
+												"conversations",
+												"21",
+												"messages"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "html",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Fri, 21 Apr 2023 16:22:10 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "Apache/2.4.46 (Win64) PHP/7.4.9"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/7.4.9"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1447"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5, max=100"
+										},
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "text/html; charset=UTF-8"
+										}
+									],
+									"cookie": [],
+									"body": "[{\"id\":27,\"content\":\"Salut \\u00e0 toi Gangplank! Quoi de neuf aujourd'hui?!\",\"is_sent_by_human\":true,\"conversation_id\":21,\"created_at\":\"2023-04-21 16:22:10\"},{\"id\":28,\"content\":\"Salutations! Je m'assure de veiller sur les eaux de Bilgewater et de prot\\u00e9ger la libert\\u00e9 des habitants de cette ville. J'allie mon courage et ma d\\u00e9termination \\u00e0 chaque mission dans le but de sauver ce qui est juste et bon dans ce monde. Que puis-je faire pour toi?\",\"is_sent_by_human\":false,\"conversation_id\":21,\"created_at\":\"2023-04-21 16:22:10\"},{\"id\":29,\"content\":\"J'ai entendu parler d'un tr\\u00e9sor cach\\u00e9 sur l'ile des serpents. Souhaites-tu m'accompagner?\",\"is_sent_by_human\":true,\"conversation_id\":21,\"created_at\":\"2023-04-21 16:22:10\"},{\"id\":30,\"content\":\"Avec plaisir! Je suis toujours pr\\u00eat \\u00e0 mettre mes comp\\u00e9tences et mon courage \\u00e0 l'\\u00e9preuve pour trouver un tr\\u00e9sor! Allons-y!\",\"is_sent_by_human\":false,\"conversation_id\":21,\"created_at\":\"2023-04-21 16:22:10\"},{\"id\":31,\"content\":\"Rassemble ton \\u00e9quipage et allons-y!\",\"is_sent_by_human\":true,\"conversation_id\":21,\"created_at\":\"2023-04-21 16:22:10\"},{\"id\":32,\"content\":\"Tout de suite! J'ai toujours des gens pr\\u00eats \\u00e0 se joindre \\u00e0 moi sur l'eau! Je vais rassembler mon \\u00e9quipage et nous appareiller. Allons nous aventurer pour trouver ce tr\\u00e9sor!\",\"is_sent_by_human\":false,\"conversation_id\":21,\"created_at\":\"2023-04-21 16:22:10\"}]"
+								}
+							]
+						},
+						{
+							"name": "Get a message of a conversation",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{API_KEY}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/conversations/21/messages/30",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"conversations",
+										"21",
+										"messages",
+										"30"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get a message of a conversation",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{API_URL}}/conversations/21/messages/30",
+											"host": [
+												"{{API_URL}}"
+											],
+											"path": [
+												"conversations",
+												"21",
+												"messages",
+												"30"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "html",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Fri, 21 Apr 2023 16:27:15 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "Apache/2.4.46 (Win64) PHP/7.4.9"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/7.4.9"
+										},
+										{
+											"key": "Content-Length",
+											"value": "254"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5, max=100"
+										},
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "text/html; charset=UTF-8"
+										}
+									],
+									"cookie": [],
+									"body": "{\"id\":30,\"content\":\"Avec plaisir! Je suis toujours pr\\u00eat \\u00e0 mettre mes comp\\u00e9tences et mon courage \\u00e0 l'\\u00e9preuve pour trouver un tr\\u00e9sor! Allons-y!\",\"is_sent_by_human\":false,\"conversation_id\":21,\"created_at\":\"2023-04-21 16:27:15\"}"
+								}
+							]
+						},
+						{
+							"name": "Send a new message in conversation",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{API_KEY}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"content\": \"Rassemble ton équipage et allons-y!\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/conversations/21/messages",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"conversations",
+										"21",
+										"messages"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Send a new message in conversation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"content\": \"Salut à toi Gangplank! Quoi de neuf aujourd'hui?!\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_URL}}/conversations/21/messages",
+											"host": [
+												"{{API_URL}}"
+											],
+											"path": [
+												"conversations",
+												"21",
+												"messages"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Fri, 21 Apr 2023 16:16:20 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "Apache/2.4.46 (Win64) PHP/7.4.9"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/7.4.9"
+										},
+										{
+											"key": "Content-Length",
+											"value": "569"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5, max=100"
+										},
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": {\n        \"id\": 27,\n        \"content\": \"Salut à toi Gangplank! Quoi de neuf aujourd'hui?!\",\n        \"is_sent_by_human\": true,\n        \"conversation_id\": 21,\n        \"created_at\": \"2023-04-21 16:16:20\"\n    },\n    \"answer\": {\n        \"id\": 28,\n        \"content\": \"Salutations! Je m'assure de veiller sur les eaux de Bilgewater et de protéger la liberté des habitants de cette ville. J'allie mon courage et ma détermination à chaque mission dans le but de sauver ce qui est juste et bon dans ce monde. Que puis-je faire pour toi?\",\n        \"is_sent_by_human\": false,\n        \"conversation_id\": 21,\n        \"created_at\": \"2023-04-21 16:16:23\"\n    }\n}"
+								},
+								{
+									"name": "Send a new message in conversation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"content\": \"J'ai entendu parler d'un trésor caché sur l'ile des serpents. Souhaites-tu m'accompagner?\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_URL}}/conversations/21/messages",
+											"host": [
+												"{{API_URL}}"
+											],
+											"path": [
+												"conversations",
+												"21",
+												"messages"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Fri, 21 Apr 2023 16:17:09 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "Apache/2.4.46 (Win64) PHP/7.4.9"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/7.4.9"
+										},
+										{
+											"key": "Content-Length",
+											"value": "481"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5, max=100"
+										},
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": {\n        \"id\": 29,\n        \"content\": \"J'ai entendu parler d'un trésor caché sur l'ile des serpents. Souhaites-tu m'accompagner?\",\n        \"is_sent_by_human\": true,\n        \"conversation_id\": 21,\n        \"created_at\": \"2023-04-21 16:17:09\"\n    },\n    \"answer\": {\n        \"id\": 30,\n        \"content\": \"Avec plaisir! Je suis toujours prêt à mettre mes compétences et mon courage à l'épreuve pour trouver un trésor! Allons-y!\",\n        \"is_sent_by_human\": false,\n        \"conversation_id\": 21,\n        \"created_at\": \"2023-04-21 16:17:12\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Regenerate last message",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{API_KEY}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/conversations/21",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"conversations",
+										"21"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Regenerate last message",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_URL}}/conversations/21",
+											"host": [
+												"{{API_URL}}"
+											],
+											"path": [
+												"conversations",
+												"21"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "html",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Fri, 21 Apr 2023 16:29:01 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "Apache/2.4.46 (Win64) PHP/7.4.9"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/7.4.9"
+										},
+										{
+											"key": "Content-Length",
+											"value": "316"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5, max=100"
+										},
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "text/html; charset=UTF-8"
+										}
+									],
+									"cookie": [],
+									"body": "{\"id\":\"32\",\"content\":\"Allons-y! Nous naviguerons vers l'ile des serpents et nous d\\u00e9couvrirons ce qui se cache derri\\u00e8re le myst\\u00e8re qui entoure cette \\u00eele. Pr\\u00e9parons-nous \\u00e0 une aventure pleine de surprises!\",\"is_sent_by_human\":false,\"conversation_id\":21,\"created_at\":\"2023-04-21 16:29:01\"}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Get All conversations",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{API_KEY}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/conversations",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"conversations"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All conversations",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/conversations",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"conversations"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 21 Apr 2023 13:57:48 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.46 (Win64) PHP/7.4.9"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.9"
+								},
+								{
+									"key": "Content-Length",
+									"value": "110"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "[{\"id\":21,\"character_id\":2,\"user_id\":7,\"created_at\":\"2023-04-21 13:57:48\",\"updated_at\":\"2023-04-21 13:57:48\"}]"
+						}
+					]
+				},
+				{
+					"name": "Get one conversation",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{API_KEY}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/conversations/21",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"conversations",
+								"21"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get one conversation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/conversations/21",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"conversations",
+										"21"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 21 Apr 2023 13:58:02 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.46 (Win64) PHP/7.4.9"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.9"
+								},
+								{
+									"key": "Content-Length",
+									"value": "108"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\"id\":21,\"character_id\":2,\"user_id\":7,\"created_at\":\"2023-04-21 13:58:02\",\"updated_at\":\"2023-04-21 13:58:02\"}"
+						}
+					]
+				},
+				{
+					"name": "Create a new conversation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{API_KEY}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"character_id\": 2,\r\n    \"user_id\": 7\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/conversations",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"conversations"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create a new conversation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"character_id\": 2,\r\n    \"user_id\": 7\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/conversations",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"conversations"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 21 Apr 2023 13:56:50 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.46 (Win64) PHP/7.4.9"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.9"
+								},
+								{
+									"key": "Content-Length",
+									"value": "108"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\"id\":21,\"character_id\":2,\"user_id\":7,\"created_at\":\"2023-04-21 13:56:50\",\"updated_at\":\"2023-04-21 13:56:50\"}"
+						}
+					]
+				},
+				{
+					"name": "Delete a conversation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoie1wiaWRcIjo5LFwidXNlcm5hbWVcIjpcIm1nZWlzczJcIixcImVtYWlsXCI6XCJtZ2Vpc3MyQHdldm94LmV1XCIsXCJmaXJzdG5hbWVcIjpcIk1hdHRoaWV1MlwiLFwibGFzdG5hbWVcIjpcIkdFSVNTMlwiLFwiY3JlYXRlZF9hdFwiOlwiMjAyMy0wNC0yMSAxNjozOToyM1wiLFwidXBkYXRlZF9hdFwiOlwiMjAyMy0wNC0yMSAxNjozOToyM1wifSIsImV4cCI6MTY4MjEzODM2M30.XZWyheXOGNSL-g6VMpc1eotJz7ZfxHTkRy_8hFtwHBk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/conversations/23",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"conversations",
+								"23"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete a conversation",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/conversations/23",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"conversations",
+										"23"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 21 Apr 2023 16:43:15 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.46 (Win64) PHP/7.4.9"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.9"
+								},
+								{
+									"key": "Content-Length",
+									"value": "15"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\"result\":true}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"mgeiss\",\r\n    \"password\" : \"Admin123@\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/auth",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "API_URL",
+			"value": "https://caen0001.mds-caen.yt/"
+		},
+		{
+			"key": "API_KEY",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoie1wiaWRcIjo3LFwidXNlcm5hbWVcIjpcIm1nZWlzc1wiLFwiZW1haWxcIjpcIm1nZWlzc0B3ZXZveC5ldVwiLFwiZmlyc3RuYW1lXCI6XCJNYXR0aGlldVwiLFwibGFzdG5hbWVcIjpcIkdFSVNTXCIsXCJjcmVhdGVkX2F0XCI6XCIyMDIzLTA1LTI1IDEzOjQzOjMzXCIsXCJ1cGRhdGVkX2F0XCI6XCIyMDIzLTA1LTI1IDEzOjQzOjMzXCJ9IiwiZXhwIjoxNjg1MDU4MjEzfQ.clzdEU8mEbQ7GkFm4I795yQd-qeuto9RM_9gbVtLg0E"
+		}
+	]
+}

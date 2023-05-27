@@ -1,4 +1,6 @@
-# Start go server
+#!/usr/bin/env sh
+
+# Start Api
 cd server
-echo "🚀 Launching GO server..."
-go run app.go
+echo "🐍 Launching API..."
+python main.py

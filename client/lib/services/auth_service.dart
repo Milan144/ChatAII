@@ -1,7 +1,5 @@
 import 'dart:convert';
 import 'package:chatai/helper/helper_function.dart';
-import 'package:chatai/pages/home_page.dart';
-import 'package:chatai/widgets/widgets.dart';
 import 'package:http/http.dart' as http;
 
 class AuthService {

@@ -3,8 +3,6 @@ import 'package:chatai/widgets/characterTile.dart';
 import 'package:flutter/material.dart';
 import 'package:chatai/helper/helper_function.dart';
 import 'package:chatai/widgets/sideBar.dart';
-import 'package:chatai/services/universe_service.dart';
-import 'package:chatai/widgets/universeTile.dart';
 
 class CharactersPage extends StatefulWidget {
   final int? idUniverse;
