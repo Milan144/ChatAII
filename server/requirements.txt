@@ -1,5 +1,0 @@
-python-dotenv
-openai
-mysql.connector
-flask
-requests

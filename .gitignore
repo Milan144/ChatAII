@@ -1,6 +1,7 @@
 # Secrets
 client/lib/secrets.dart
-server/.env
+server/app/.env
+server/database/
 # Miscellaneous
 */*.class
 */*.lock
