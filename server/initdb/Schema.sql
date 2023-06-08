@@ -1,4 +1,3 @@
-CREATE DATABASE chataii;
 USE chataii;
 -- --------------------------------------------------------
 
@@ -38,8 +37,10 @@ CREATE TABLE `conversation`
 CREATE TABLE `message`
 (
     `messageId`      int(11) NOT NULL,
-    `content`        varchar(255) DEFAULT NULL,
-    `conversationId` int(11)      DEFAULT NULL
+    `conversationId` int(11)       DEFAULT NULL,
+    `message`        varchar(6000) DEFAULT NULL,
+    `response`       varchar(6000) DEFAULT NULL
+
 ) ENGINE = InnoDB
   DEFAULT CHARSET = latin1;
 

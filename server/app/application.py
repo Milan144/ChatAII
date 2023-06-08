@@ -26,11 +26,9 @@ def create_db_connection():
 
 
 @app.route("/", methods=["GET"])
-def shorten():
+def home():
     return "Welcome to Chataii API"
 
-
-# TODO : Implement LOGIN TOKEN
 
 # ? OPENAI API REQUEST
 def openai_request(prompt):
@@ -41,6 +39,9 @@ def openai_request(prompt):
 
 
 # ! Users routes
+
+# TODO: Authenticate with jwt
+
 
 # Get all users
 @app.route("/users", methods=["GET"])
@@ -56,12 +57,12 @@ def getUsers():
 
 
 # Get one User
-@app.route("/users/<id>", methods=["GET"])
-def getUser(id):
+@app.route("/users/<userId>", methods=["GET"])
+def getUser(userId):
     connection = create_db_connection()
     try:
         with connection.cursor() as cursor:
-            cursor.execute("SELECT * FROM user WHERE id = %s", (id))
+            cursor.execute("SELECT * FROM user WHERE userId = %s", (userId))
             result = cursor.fetchone()
             return jsonify(result)
     finally:
@@ -87,40 +88,19 @@ def createUser():
 
 
 # Update User
-@app.route("/users/<id>", methods=["PUT"])
-def updateUser(id):
+@app.route("/users/<userId>", methods=["PUT"])
+def updateUser(userId):
     connection = create_db_connection()
     try:
         with connection.cursor() as cursor:
             username = request.json["username"]
             password = request.json["password"]
             cursor.execute(
-                "UPDATE user SET username = %s, password = %s WHERE id = %s",
-                (username, password, id),
+                "UPDATE user SET username = %s, password = %s WHERE userId = %s",
+                (username, password, userId),
             )
             connection.commit()
             return jsonify({"message": "User updated successfully"})
-    finally:
-        connection.close()
-
-
-# Login and get token
-@app.route("/auth", methods=["POST"])
-def login():
-    connection = create_db_connection()
-    try:
-        with connection.cursor() as cursor:
-            username = request.json["username"]
-            password = request.json["password"]
-            cursor.execute(
-                "SELECT * FROM user WHERE username = %s AND password = %s",
-                (username, password),
-            )
-            result = cursor.fetchone()
-            if result:
-                return jsonify({"token": result["id"]})
-            else:
-                return jsonify({"message": "Wrong credentials"})
     finally:
         connection.close()
 
@@ -195,14 +175,14 @@ def getCharacters(id):
 
 
 # Get one character
-@app.route("/universes/<iduniverse>/characters/<idcharacter>", methods=["GET"])
-def getCharacter(iduniverse, idcharacter):
+@app.route("/characters/<characterId>", methods=["GET"])
+def getCharacter(characterId):
     connection = create_db_connection()
     try:
         with connection.cursor() as cursor:
             cursor.execute(
-                "SELECT * FROM characterai WHERE universeId = %s AND id = %s",
-                (iduniverse, idcharacter),
+                "SELECT * FROM characterai WHERE characterId = %s",
+                (characterId),
             )
             result = cursor.fetchone()
             return jsonify(result)
@@ -233,17 +213,17 @@ def createCharacter(universeId):
 
 
 # Generate new description for character
-@app.route("/universes/<iduniverse>/characters/<idcharacter>", methods=["PUT"])
-def updateCharacter(iduniverse, idcharacter):
+@app.route("/universes/<iduniverse>/characters/<characterId>", methods=["PUT"])
+def updateCharacter(iduniverse, characterId):
     connection = create_db_connection()
     try:
         with connection.cursor() as cursor:
-            name = request.json["name"]
-            universe = getUniverse(iduniverse)
-            history = openai_request("Describe " + name + "from " + universe + " in 50 words.")
+            name = getCharacter(iduniverse, characterId).json["name"]
+            universe = getUniverse(iduniverse).json["name"]
+            history = openai_request("Describe the story of " + name + "from " + universe + " in 100 words max.")
             cursor.execute(
-                "UPDATE characterai SET name = %s, history = %s WHERE id = %s",
-                (name, history, idcharacter),
+                "UPDATE characterai SET name = %s, history = %s WHERE characterId = %s",
+                (name, history, characterId),
             )
             connection.commit()
             return jsonify({"message": "Character updated successfully"})
@@ -305,7 +285,7 @@ def getMessages(id):
     connection = create_db_connection()
     try:
         with connection.cursor() as cursor:
-            cursor.execute("SELECT * FROM message WHERE id_conversation = %s", (id))
+            cursor.execute("SELECT * FROM message WHERE conversationId = %s", (id))
             result = cursor.fetchall()
             return jsonify(result)
     finally:
@@ -319,7 +299,7 @@ def getMessage(idconv, idmsg):
     try:
         with connection.cursor() as cursor:
             cursor.execute(
-                "SELECT * FROM message WHERE id_conversation = %s AND id = %s",
+                "SELECT * FROM message WHERE conversationId = %s AND id = %s",
                 (idconv, idmsg),
             )
             result = cursor.fetchone()
@@ -328,7 +308,41 @@ def getMessage(idconv, idmsg):
         connection.close()
 
 
-# TODO: Send message in a conversation
+# Sending message to OpenAI API
+@app.route("/conversations/<conversationId>/newmessage", methods=["POST"])
+def sendMessage(conversationId):
+    connection = create_db_connection()
+    try:
+        characterId = getConversation(conversationId).json["characterId"]
+        context = getCharacter(characterId).json["history"]
+        message = request.json["message"]
+        # Check if there is other messages in the conversation if there is not, add response = openai_request(
+        #             "In a fun and roleplay context, you gonna answer to my questions like you are a character from a video game. You will remember this story and keep in mind the given context and the previous messages. This is your story : " + context + " This is the question : " + message)
+        response = ""
+        if not getMessages(conversationId).json:
+            response = openai_request(
+                "Keep in mind that the last message was : "
+                + getMessages(conversationId).json[-1]
+                + " Now, answer to this message : "
+                + message
+            )
+        else:
+            response = openai_request(
+                "In a fun and roleplay context, you gonna answer to my questions like you are a character from a video game. You will remember this story and keep in mind the given context and the previous messages. This is your story : "
+                + context
+                + " This is the question : "
+                + message
+            )
+
+        with connection.cursor() as cursor:
+            cursor.execute(
+                "INSERT INTO message (conversationId, message, response) VALUES (%s, %s, %s)",
+                (conversationId, message, response),
+            )
+            connection.commit()
+            return response
+    finally:
+        connection.close()
 
 
 # TODO : Regenerate last message of a conversation
