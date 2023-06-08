@@ -439,6 +439,166 @@
 							"body": "kkk{\"id\":\"7\",\"username\":\"mgeiss3\",\"email\":\"mgeiss2@wevox.eu\",\"firstname\":\"Matthieu2\",\"lastname\":\"GEISS2\",\"created_at\":\"2023-04-15 22:47:58\",\"updated_at\":\"2023-04-15 22:47:58\"}"
 						}
 					]
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{API_KEY}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"Admin\",\r\n    \"password\" : \"123@\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/users/1",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Modify the identified user",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"mgeiss2\",\r\n    \"password\" : \"newPassword\",\r\n    \"email\" : \"mgeiss2@wevox.eu\",\r\n    \"firstname\" : \"Matthieu2\",\r\n    \"lastname\" : \"GEISS2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/users/7",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"users",
+										"7"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 15 Apr 2023 22:46:37 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.46 (Win64) PHP/7.4.9"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.9"
+								},
+								{
+									"key": "Content-Length",
+									"value": "172"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\"id\":\"7\",\"username\":\"mgeiss2\",\"email\":\"mgeiss2@wevox.eu\",\"firstname\":\"Matthieu2\",\"lastname\":\"GEISS2\",\"created_at\":\"2023-04-15 22:46:37\",\"updated_at\":\"2023-04-15 22:46:37\"}"
+						},
+						{
+							"name": "Modify the identified user without password",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"mgeiss3\",\r\n    \"email\" : \"mgeiss3@wevox.eu\",\r\n    \"firstname\" : \"Matthieu3\",\r\n    \"lastname\" : \"GEISS3\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/users/7",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"users",
+										"7"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 15 Apr 2023 22:47:58 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.46 (Win64) PHP/7.4.9"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.9"
+								},
+								{
+									"key": "Content-Length",
+									"value": "175"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "kkk{\"id\":\"7\",\"username\":\"mgeiss3\",\"email\":\"mgeiss2@wevox.eu\",\"firstname\":\"Matthieu2\",\"lastname\":\"GEISS2\",\"created_at\":\"2023-04-15 22:47:58\",\"updated_at\":\"2023-04-15 22:47:58\"}"
+						}
+					]
 				}
 			]
 		},
@@ -465,7 +625,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"name\" : \"Rammus\"\r\n}",
+									"raw": "{\r\n    \"name\" : \"Pyke\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -473,13 +633,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{API_URL}}/universes/1/characters",
+									"raw": "{{API_URL}}/universes/5/characters",
 									"host": [
 										"{{API_URL}}"
 									],
 									"path": [
 										"universes",
-										"1",
+										"5",
 										"characters"
 									]
 								}
@@ -680,13 +840,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{API_URL}}/characters/1",
+									"raw": "{{API_URL}}/characters/8",
 									"host": [
 										"{{API_URL}}"
 									],
 									"path": [
 										"characters",
-										"1"
+										"8"
 									]
 								}
 							},
@@ -775,13 +935,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{API_URL}}/universes/1/characters",
+									"raw": "{{API_URL}}/universes/3/characters",
 									"host": [
 										"{{API_URL}}"
 									],
 									"path": [
 										"universes",
-										"1",
+										"3",
 										"characters"
 									]
 								}
@@ -861,7 +1021,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"League of Legends1\"\r\n}",
+							"raw": "{\r\n    \"name\": \"League of Legends\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1441,7 +1601,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"message\": \"In what lane are you played the most ? \"\r\n}",
+									"raw": "{\r\n    \"message\": \"Qui es-tu ?\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1895,7 +2055,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"characterId\": 2,\r\n    \"userId\": 1\r\n}",
+							"raw": "{\r\n    \"characterId\": 8,\r\n    \"userId\": 1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
