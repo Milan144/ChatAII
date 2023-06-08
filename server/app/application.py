@@ -3,7 +3,6 @@ import os
 from dotenv import load_dotenv
 import openai
 from flask import Flask, jsonify, request
-from flask_restx import Api, Resource
 
 # OpenAI API key
 load_dotenv()
@@ -12,7 +11,6 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 print("Api key loaded")
 
 application = app = Flask(__name__)
-api = Api(application)
 
 
 def create_db_connection():
@@ -315,26 +313,10 @@ def getMessage(idconv, idmsg):
 def sendMessage(conversationId):
     connection = create_db_connection()
     try:
-        characterId = getConversation(conversationId).json["characterId"]
-        context = getCharacter(characterId).json["history"]
         message = request.json["message"]
-        response = ""
-        if not getMessages(conversationId).json:
-            response = openai_request(
-                "In a fun and roleplay context, you gonna answer to my questions like you are a character from a video game. You will remember this story and keep in mind the given context and the previous messages. This is your story : "
-                + context
-                + " This is the question : "
-                + message
-            )
-        else:
-            response = openai_request(
-                "In a fun and roleplay context, you gonna answer to my questions like you are a character from a video game. You will remember this story and keep in mind the given context and the previous messages. This is your story : "
-                + context
-                + "Keep in mind that the last message was : "
-                + getMessages(conversationId).json[-1]["response"]
-                + " Now, answer to this message : "
-                + message
-            )
+        prompt = createPrompt(conversationId, getConversation(conversationId).json["characterId"], message)
+
+        response = openai_request(prompt)
 
         with connection.cursor() as cursor:
             cursor.execute(
@@ -347,10 +329,23 @@ def sendMessage(conversationId):
         connection.close()
 
 
-# TODO : Logs
+def createPrompt(conversationId, characterId, message):
+    context = getCharacter(characterId).json["history"]
+    prompt = "In a fun and roleplay context, you gonna answer to my questions like you are a character from a video game. You will remember this story and keep in mind the given context and the previous messages. This is your story : " + context
+    # if there is no message in the conversation, we don't need to add the last message
+    if len(getMessages(conversationId).json) == 0:
+        prompt = prompt + "Now, answer to this message : " + message
+    else:
+        prompt = prompt + "Keep in mind that the last message was : " + getMessages(conversationId).json[-1][
+            "response"] + " Now, answer to this message : " + message
+
+    return prompt
+
+
+# TODO : Logs + error management
 # TODO : Regenerate last message of a conversation
-# TODO : Manage history
 # TODO : Clean code
+# TODO : Doc
 
 
 if __name__ == "__main__":

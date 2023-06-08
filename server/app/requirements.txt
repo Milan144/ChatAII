@@ -2,4 +2,3 @@ flask
 pymysql
 python-dotenv
 openai
-flask-restx
