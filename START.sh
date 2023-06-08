@@ -3,6 +3,7 @@
 cd server
 echo "🐍 Launching API..."
 docker compose up -d
-cd client
+sleep 20
+cd ../client
 echo "🚀 Launching Flutter app..."
 flutter run -d chrome
