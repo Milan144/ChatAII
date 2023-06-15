@@ -18,13 +18,6 @@ Its better if you have docker installed to easily access to a database.
 ## Installation 
 Launch the installation script, it will install the dependencies for the python api and the flutter app.
 
-## Database
-"docker compose up -d"
-
-The phpmyadmin is available at localhost:8081 with root:root as login and password.
-
-Import the characterChatAI.sql file into msql.
-
 ## Start the app 
 Launch the bash script 'START.sh' and it will start the API and the front end interface.
 
